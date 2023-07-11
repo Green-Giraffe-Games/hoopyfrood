@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hoopyfrood Fishing</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1 id="title">Hoopyfrood Fishing</h1>
+    <div class="game-container">
+        <div class="location">
+            <h2>Location</h2>
+            <select id="location-select">
+                <!-- Options will be filled in by JavaScript -->
+            </select>
+            <div id="location-description"></div>
+            <br>
+            <div id="flavour-text" style="font-style: italic; font-size: 80%"></div>
+        </div>
+        <div class="fishing">
+            <h2>Fishing</h2>
+            <button id="cast-off">Cast Off</button>
+            <div id="fishing-status"></div>
+            <div id="fish-description"></div>
+        </div>
+        <div class="your-catch">
+            <h2>Your Catch</h2>
+        </div>
+        <div class="crafting">
+            <h2>Crafting</h2>
+            <select id="crafting-select">
+                    <!-- Options will be filled in by JavaScript -->
+                </select>
+                <button id="craft">Craft</button>
+                <div id="crafting-details"></div>
+                <div id="crafting-status"></div>
+                <div class= "crafting-effect" id="crafting-effect" style="font-style: italic; font-size: 80%"></div>
+        </div>
+        <div class="inventory">
+                <h2>Inventory</h2>
+            <div class="inventory-items"></div>
+            <!-- Inventory items go here -->
+        </div>
+    </div>
+    <div class="notification" id="notification" style="display: none;"></div>
+    <!-- <button id="settingsButton" onclick="openSettings()">Settings</button>  -->
+    <div id="settingsModal" class="modal">
+            <div class="modal-content">
+                <h2>Game Settings</h2>
+                <div>
+                    <label>
+                        Difficulty:
+                        <select id="difficulty" onchange="explainDifficulty()">
+                            <option value="medium">Normal</option>
+                            <option value="harder">Slightly harder</option>
+                            <option value="simplified">Easy and simplified</option>
+                            <option value="hard">Super onerous</option>
+                            <option value="contemplative">Contemplative</option>
+                        </select>
+                        <p id ="difficultyExplain" style = "font-style: italic; font-size: 80%;"> The intended experience.</p>
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        Sound:
+                        <input type="checkbox" id="sound" checked>
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        Restore Catch:
+                        <input type="checkbox" id="load-game" checked>
+                    </label>
+                </div>
+                <button id="closeSettings">Start Game</button>
+            </div>  
+        </div>
+
+<script src="script.js"></script>
+<script>
+        window.onload = function() {
+            if(localStorage.getItem('gameOver') === 'true') {
+                document.body.innerHTML = "<div style='background-color: black; color: white; height: 100vh; display: flex; justify-content: center; align-items: center;'><h1>so long, fisher</h1></div>";
+            }
+        }
+</script>
+</body>
+</html>
