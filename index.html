@@ -42,7 +42,6 @@
         </div>
     </div>
     <div class="notification" id="notification" style="display: none;"></div>
-    <!-- <button id="settingsButton" onclick="openSettings()">Settings</button>  -->
     <div id="settingsModal" class="modal">
             <div class="modal-content">
                 <h2>Game Settings</h2>
@@ -77,11 +76,11 @@
 
 <script src="script.js"></script>
 <script>
-        //window.onload = function() {
-           //if(localStorage.getItem('gameOver') === 'true') {
-              // document.body.innerHTML = "<div style='background-color: black; color: white; height: 100vh; display: flex; justify-content: center; align-items: center;'><h1>so long, fisher</h1></div>";
-           // }
-        //}
+        window.onload = function() {
+           if(localStorage.getItem('gameOver') === 'true') {
+              document.body.innerHTML = "<div style='background-color: black; color: white; height: 100vh; display: flex; justify-content: center; align-items: center;'><h1>so long, fisher</h1></div>";
+           }
+        }
 </script>
 </body>
 </html>
